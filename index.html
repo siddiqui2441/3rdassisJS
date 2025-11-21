@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIC Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>User NIC Generator</h2>
+
+        <input type="text" id="name" placeholder="Enter your name">
+        <b id="errorName" class="error"></b>
+
+        <input type="text" id="fatherName" placeholder="Enter father name">
+        <b id="errorFather" class="error"></b>
+
+        <input type="number" id="age" placeholder="Enter age">
+        <b id="errorAge" class="error"></b>
+
+        <input type="text" id="nic" placeholder="NIC will appear here" disabled>
+
+        <button onclick="submitForm()">Submit</button>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
