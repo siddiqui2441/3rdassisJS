@@ -1,10 +1,20 @@
 var nameInput = document.getElementById("name");
 var fatherInput = document.getElementById("fatherName");
+var emailinput = document.getElementById("email");
+var passwordinput = document.getElementById("password");
 var ageInput = document.getElementById("age");
 var nicInput = document.getElementById("nic");
 
+
+
+
+
+
+
 var errorName = document.getElementById("errorName");
 var errorFather = document.getElementById("errorFather");
+var erroremail =document.getElementById ("erroremail");
+var errorpassword = document.getElementById("errorpassword");
 var errorAge = document.getElementById("errorAge");
 
 // NIC unique rakhne ke liye array
@@ -17,14 +27,16 @@ function generateNIC() {
         var nic = "";
 
         // 11 digit bnana
-        for (var i = 0; i < 11; i++) {
-            nic += Math.floor(Math.random() * 10);
+        for (var i = 0; i < 13; i++) {
+            nic += Math.floor(Math.random() * 10).toFixed(0)
+              var newCnic = nic.toString().substring(0,4)+"-"+nic.toString().substring(4,12)+"-"+nic.toString().substring(12)
+             nicInput.value=newCnic.toString()
         }
 
         // duplicate NIC na ho
-        if (!nicArray.includes(nic)) {
-            nicArray.push(nic);
-            return nic;
+        if (!newCnicewnicArray.includes(nicArray)) {
+            nicArray.push(nicArray);
+            return nicArray;
         }
     }
 }
@@ -35,6 +47,9 @@ function submitForm() {
     errorName.innerText = "";
     errorFather.innerText = "";
     errorAge.innerText = "";
+   erroremail.innerText="";
+   errorpassword.innerText="";
+    
 
     // Validation
     if (nameInput.value.trim() === "") {
@@ -47,6 +62,14 @@ function submitForm() {
         return;
     }
 
+    if (emailinput.value === "") {
+        erroremail.innerText = "Please enter email";
+        return;
+    }
+    if (passwordinput.value === "") {
+        errorpassword.innerText = "Please enter password";
+        return;
+    }
     if (ageInput.value === "") {
         errorAge.innerText = "Please enter age";
         return;
